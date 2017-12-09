@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension version="3.5" type="plugin" group="content" method="upgrade">
-	<name>PLG_TEXT2IMAGE</name>
-	<author>Fjodor Schäfer</author>
+	<name>text2image</name>
+	<author>Fjodor Schaefer</author>
 	<authorEmail>fjodor@schefa.com</authorEmail>
 	<authorUrl>https://www.schefa.com</authorUrl>
 	<copyright>Copyright (C) 2005 - 2014 Open Source Matters. All rights reserved.</copyright>
 	<creationDate>November 2014</creationDate>
 	<license>GNU General Public License version 2 or later</license>
-	<version>1.0.2</version>
+	<version>1.1.0</version>
 	<updateservers>    
 	    <server type="extension" priority="1"
-	      name="com_secretary"><![CDATA[https://raw.githubusercontent.com/schefa/updateservers/master/secretary/plg_text2image.xml]]>
+		 name="text2image"><![CDATA[https://raw.githubusercontent.com/schefa/updateservers/master/secretary/plg_text2image.xml]]>
 	    </server>
 	</updateservers>
 	<description>
@@ -52,7 +52,7 @@
 
 			<fieldset name="basic">
 			
-				<field name="fontfile" type="filelist" default="opensans.ttf" label="PLG_TEXT2IMAGE_FONTFILE" description="PLG_TEXT2IMAGE_FONTFILE_DESC" directory="plugins/content/text2image/fonts" exclude="txt" />
+				<field name="fontfile" type="filelist" default="opensans.ttf" label="PLG_TEXT2IMAGE_FONTFILE" description="PLG_TEXT2IMAGE_FONTFILE_DESC" directory="plugins/content/text2image/application/fonts" exclude="txt" />
 				<field name="fontsize" type="text" default="13" description="PLG_TEXT2IMAGE_FONTSIZE_DESC" label="PLG_TEXT2IMAGE_FONTSIZE" />
 				<field name="fontcolor" type="color" default="#000000" description="PLG_TEXT2IMAGE_FONTCOLOR_DESC" label="PLG_TEXT2IMAGE_FONTCOLOR" />
 				<field name="output" type="list" default="1" description="PLG_TEXT2IMAGE_OUTPUT_DESC" label="PLG_TEXT2IMAGE_OUTPUT">
