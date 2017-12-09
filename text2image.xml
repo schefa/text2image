@@ -3,18 +3,16 @@
 	<name>PLG_TEXT2IMAGE</name>
 	<author>Fjodor Schäfer</author>
 	<authorEmail>fjodor@schefa.com</authorEmail>
-	<authorUrl>dev.schefa.com</authorUrl>
+	<authorUrl>https://www.schefa.com</authorUrl>
 	<copyright>Copyright (C) 2005 - 2014 Open Source Matters. All rights reserved.</copyright>
 	<creationDate>November 2014</creationDate>
 	<license>GNU General Public License version 2 or later</license>
 	<version>1.0.2</version>
-	
 	<updateservers>    
 	    <server type="extension" priority="1"
 	      name="com_secretary"><![CDATA[https://raw.githubusercontent.com/schefa/updateservers/master/secretary/plg_text2image.xml]]>
 	    </server>
 	</updateservers>
-	
 	<description>
 	<![CDATA[
 		<span class='readonly'>
