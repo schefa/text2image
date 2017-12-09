@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.5" type="plugin" group="content" method="upgrade">
+	<name>PLG_TEXT2IMAGE</name>
+	<author>Fjodor Schäfer</author>
+	<authorEmail>fjodor@schefa.com</authorEmail>
+	<authorUrl>dev.schefa.com</authorUrl>
+	<copyright>Copyright (C) 2005 - 2014 Open Source Matters. All rights reserved.</copyright>
+	<creationDate>November 2014</creationDate>
+	<license>GNU General Public License version 2 or later</license>
+	<version>1.0.2</version>
+	
+	<updateservers>    
+	    <server type="extension" priority="1"
+	      name="com_secretary"><![CDATA[https://raw.githubusercontent.com/schefa/updateservers/master/secretary/plg_text2image.xml]]>
+	    </server>
+	</updateservers>
+	
+	<description>
+	<![CDATA[
+		<span class='readonly'>
+			<h1><span class='colored'>text</span>2<span class='colored'>image</span> <small>ver. 1.0.1</small></h1>
+			<p>Protect your E-mail and other sensitive information against spambots and crawlers.</p>
+			<p>This Plugin converts any text into a transparent image file (png or base64). Use the following syntax in your article</p>
+			<p class='syntax'><span class='code'>{text2image}</span><span class='text'>your text here</span><span class='code'>{/text2image}</span></p>
+			<p>For a more specific output you can add and modify these parameters. Make sure that you upload the ttf-fontfile in the plugins-folder, if you want to use another font.</p>
+			<p class='syntax'><span class='code'>{text2image size=13 color=#333333 font=opensans}</span><span class='text'>your text here</span><span class='code'>{/text2image}</span></p>
+			<p class='license'>&copy; 2014 Fjodor Schäfer | <a href='http://dev.schefa.com' target='_blank'>Project Page</a> | Released under the <a target="_blank" href="http://www.gnu.org/licenses/gpl-2.0.html">GNU/GPL v2 license.</a></p>
+		</span>
+		<style type='text/css'>
+			span.readonly {padding: 10px; font-family: Arial; font-size:14px !important; font-weight: normal !important; text-align: justify; color: #777; line-height: 24px; } 
+			span.readonly h1 { clear:both; font-family:Trebuchet MS, sans-serif; font-size:38px; margin:30px 20px 23px; padding:0px 0px 24px 10px; color:#333; border-bottom: 1px solid #eee; font-weight: normal; } 
+			span.readonly h1 .colored { color:#6696A1; }
+			span.readonly p.syntax {font-size:125%;font-family:Verdana;} 
+			span.readonly p.syntax .code {color:#000;padding:6px 8px;margin:0 5px;} 
+			span.readonly p { margin: 0 26px 10px } 
+			span.readonly p a { color: #69c } 
+			span.readonly p.license { border-top: 1px solid #eee; font-size: 11px; margin: 30px 26px 0; padding: 6px 0; }
+		</style>
+	]]>
+	</description>
+	<files>
+		<filename plugin="text2image">text2image.php</filename>
+		<filename>index.html</filename>
+		<folder>application</folder>
+	</files>
+	<languages>
+		<language tag="en-GB">application/language/en-GB.plg_content_text2image.ini</language>
+		<language tag="en-GB">application/language/en-GB.plg_content_text2image.sys.ini</language>
+		<language tag="de-DE">application/language/de-DE.plg_content_text2image.ini</language>
+		<language tag="de-DE">application/language/de-DE.plg_content_text2image.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+
+			<fieldset name="basic">
+			
+				<field name="fontfile" type="filelist" default="opensans.ttf" label="PLG_TEXT2IMAGE_FONTFILE" description="PLG_TEXT2IMAGE_FONTFILE_DESC" directory="plugins/content/text2image/fonts" exclude="txt" />
+				<field name="fontsize" type="text" default="13" description="PLG_TEXT2IMAGE_FONTSIZE_DESC" label="PLG_TEXT2IMAGE_FONTSIZE" />
+				<field name="fontcolor" type="color" default="#000000" description="PLG_TEXT2IMAGE_FONTCOLOR_DESC" label="PLG_TEXT2IMAGE_FONTCOLOR" />
+				<field name="output" type="list" default="1" description="PLG_TEXT2IMAGE_OUTPUT_DESC" label="PLG_TEXT2IMAGE_OUTPUT">
+					<option value="0">PLG_TEXT2IMAGE_OUTPUT_BASE64</option>
+					<option value="1">PLG_TEXT2IMAGE_OUTPUT_PNG</option>
+				</field>
+				
+			</fieldset>
+
+		</fields>
+	</config>
+</extension>
