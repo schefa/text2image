@@ -10,7 +10,7 @@
 	<version>1.1.0</version>
 	<updateservers>    
 	    <server type="extension" priority="1"
-		 name="text2image"><![CDATA[https://raw.githubusercontent.com/schefa/updateservers/master/secretary/plg_text2image.xml]]>
+		 name="text2image"><![CDATA[https://raw.githubusercontent.com/schefa/updateservers/master/plg_text2image.xml]]>
 	    </server>
 	</updateservers>
 	<description>
