@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+       <property environment="env"/>
+       <property name="source" value="."/>
+       <property name="release" value="c:/users/schefa/workspace/Github/_package"/>
+       <property name="builddir" value="c:/users/schefa/workspace/Github"/>
+       <property name="verbose" value="false"/>
+
+       <tstamp>
+       	<format property="NOW" pattern="yyyyMMdd"/>
+       </tstamp>
+
+       <condition property="version" value="${NOW}_r${dist.revision}" else="${NOW}">
+       	<isset property="dist.revision"/>
+       </condition>
+
+       <target name="_clean">
+       	<delete dir="${builddir}/${NAME}" verbose="${verbose}">
+       		<include name="*"/>
+       	</delete>
+       </target>
+
+       <target name="_package">
+       	<zip destfile="${release}/${NAME}_${version}.zip" basedir="${builddir}/${NAME}" excludes=".svn,LICENSE,README.md"/>
+       </target>
+
+       <target name="buildplugin" depends="_clean">
+		   <copy todir="${builddir}/${NAME}" overwrite="true" verbose="${verbose}" failonerror="false">
+		   <fileset dir="${source}/plugins/content/${NAME}"></fileset>
+		   </copy>
+       </target>
+
+</project>

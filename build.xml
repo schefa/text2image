@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="text2image" default="all" basedir=".">
+       <import file="common.xml"/>
+       <target name="all" depends="build,package"/>
+       <target name="package">
+               <antcall target="_package">
+                       <param name="NAME" value="text2image"/>
+               </antcall>
+       </target>
+       <target name="build">
+               <antcall target="buildplugin">
+               	<param name="NAME" value="text2image"/>
+           			<param name="NAME_SHORT" value="text2image"/>
+                    <param name="PREFIX" value=""/>
+               </antcall>
+       </target>
+</project>
