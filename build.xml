@@ -1,17 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="text2image" default="all" basedir=".">
-       <import file="common.xml"/>
-       <target name="all" depends="build,package"/>
-       <target name="package">
-               <antcall target="_package">
-                       <param name="NAME" value="text2image"/>
-               </antcall>
-       </target>
-       <target name="build">
-               <antcall target="buildplugin">
-               	<param name="NAME" value="text2image"/>
-           			<param name="NAME_SHORT" value="text2image"/>
-                    <param name="PREFIX" value=""/>
-               </antcall>
-       </target>
+
+	<target name="all" depends="build,package"/>
+	
+    <property environment="env"/>
+    <property name="source" value="."/>
+    <property name="repository" value="c:/users/schefa/workspace"/>
+    <property name="release" value="${repository}/Github/_package"/> 
+    <property name="builddir" value="${repository}/Github"/>
+    <property name="verbose" value="false"/>
+    <property name="NAME" value="text2image"/>
+    <property name="NAME_SHORT" value="text2image"/>
+    <property name="PREFIX" value="false"/>
+
+    <tstamp>
+    	<format property="NOW" pattern="yyyyMMdd"/>
+    </tstamp>
+
+    <condition property="version" value="${NOW}_r${dist.revision}" else="${NOW}">
+    	<isset property="dist.revision"/>
+    </condition>
+
+    <target name="_clean">
+    	<delete dir="${builddir}/${NAME}" verbose="${verbose}">
+    		<include name="*"/>
+    	</delete>
+    </target>
+
+    <target name="package">
+    	<zip destfile="${release}/${NAME}_${version}.zip" basedir="${builddir}/${NAME}" excludes=".svn,LICENSE,README.md"/>
+    </target>
+
+    <target name="build" depends="_clean">
+		   <copy todir="${builddir}/${NAME}" overwrite="true" verbose="${verbose}" failonerror="false">
+		   <fileset dir="${source}/plugins/content/${NAME}"></fileset>
+		   </copy>
+    </target>
+
+	
 </project>
