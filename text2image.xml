@@ -5,9 +5,9 @@
 	<authorEmail>fjodor@schefa.com</authorEmail>
 	<authorUrl>https://www.schefa.com</authorUrl>
 	<copyright>Copyright (C) 2005 - 2014 Open Source Matters. All rights reserved.</copyright>
-	<creationDate>November 2014</creationDate>
+	<creationDate>10.12.2017</creationDate>
 	<license>GNU General Public License version 2 or later</license>
-	<version>1.1.0</version>
+	<version>1.1.1</version>
 	<updateservers>    
 	    <server type="extension" priority="1"
 		 name="text2image"><![CDATA[https://raw.githubusercontent.com/schefa/updateservers/master/plg_text2image.xml]]>
