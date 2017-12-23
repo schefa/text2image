@@ -2,12 +2,11 @@
 <project name="text2image" default="all" basedir=".">
 
 	<target name="all" depends="build,package"/>
-	
+
     <property environment="env"/>
     <property name="source" value="."/>
-    <property name="repository" value="c:/users/schefa/workspace"/>
-    <property name="release" value="${repository}/Github/_package"/> 
-    <property name="builddir" value="${repository}/Github"/>
+    <property name="release" value="./../Github/_package"/> 
+    <property name="builddir" value="./../Github"/>
     <property name="verbose" value="false"/>
     <property name="NAME" value="text2image"/>
     <property name="NAME_SHORT" value="text2image"/>
